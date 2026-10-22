@@ -1,31 +1,31 @@
-# ChaCha20-Poly1305 native FPGA core
+# ChaCha20-Poly1305 — AXI4-Lite + AXI4-Stream/DMA
 
-Verilog-2001 implementation of RFC 8439. This `main` branch contains the
-native algorithm and its verification: four parallel ChaCha20 quarter rounds,
-two Poly1305 arithmetic lanes and a little-endian 32-bit AEAD word interface.
-One message is processed at a time.
+This branch integrates the native RFC 8439 core as `aead_axi_dma`. The CPU programs key, nonce, original byte lengths and commands over AXI4-Lite.
+AXI4-Stream carries whole message packets between the AEAD peripheral and a
+separate vendor AXI DMA, which owns DDR transactions.
 
-| Use | Entry point |
+| Boundary | Entry point |
 |---|---|
-| Design contract and verification requirements | [Core specification](docs/architecture/core_specification.md) |
-| RTL hierarchy, ports and control flow | [Design analysis](docs/architecture/vlsit_rtl_analysis.md), [diagrams](docs/figures/README.md) |
-| Algorithm architecture | [AEAD](docs/architecture/aead.md), [ChaCha20](docs/architecture/chacha20.md), [Poly1305](docs/architecture/poly1305.md) |
-| Integration boundary | [Native word interface](docs/interfaces/aead_stream.md) |
-| Golden fixtures, regression and captures | [DV guide](dv/README.md), `script/gen_vectors.py` |
-| Vivado GUI simulation and OOC comparison | [Core project](vivado/core/README.md) |
-| Cryptographic references | [Eight saved papers](docs/references.md) |
+| Native core, inherited from `main` | [Core specification](docs/architecture/core_specification.md) |
+| Peripheral behavior and requirements | [Peripheral architecture](docs/architecture/peripheral.md), [register/packet contract](docs/interfaces/aead_axi_dma.md) |
+| Interface sources and protocol citations | [Integration references](docs/interfaces/integration_references.md) |
+| Wrapper hierarchy and flowcharts | [Interface analysis](docs/architecture/interface_analysis.md), [figures](docs/figures/README.md) |
+| IP Catalog package | [Package guide](vivado/ip_repo/aead_axi_dma_1_0/README.md) |
+| KV260 design | [Board guide](vivado/kv260_dma/README.md), `vivado/kv260_dma/kv260_dma.xpr` |
+| Linux host and existing board observations | [Software guide](software/README.md) |
+| Verification | [Native DV](dv/README.md), [peripheral DV](dv/INTERFACE.md) |
 
-The two integration branches are independent children of this native core:
-`axi4l` adds CPU word transfers through AXI4-Lite; `axi4l-axi4s-dma` adds
-AXI4-Lite control and AXI4-Stream/DMA packet transfers. Select one branch for
-its wrapper, peripheral bench, packaged IP, KV260 project and Linux host.
+The native eight-module RTL, its specification and fixtures are inherited
+unchanged from `main`. This branch adds only its own transport implementation.
+The peripheral target is 200 MHz. Native OOC synthesis still targets the native
+top on XC7V2000T-FLG1925-2, separately from the board design.
 
 ## Simulate
 
 1. Create `.venv`: `python3 -m venv .venv`, then `.venv/bin/python -m pip install -r script/requirements.txt`.
 2. Generate the native suite: `.venv/bin/python script/gen_vectors.py generate`.
 3. Generate the RFC custom catalog: `.venv/bin/python script/gen_vectors.py generate --profile rfc`.
-4. Open `vivado/core/core.xpr` in Vivado 2025.2. Select `tb_aead` for the full regression or **Set as Top** on `tb_aead_custom` for the custom catalog.
+4. Open `vivado/core/core.xpr` in Vivado 2025.2. Select `tb_aead_axi_dma` for the peripheral suite, `tb_aead` for native regression or `tb_aead_custom` for custom fixtures, then **Set as Top**.
 5. Run **Behavioral Simulation** in the GUI; require the final bench PASS. The waveform hook selects the matching preset.
 
 After running `tb_aead_custom`, check the captured RTL output independently:

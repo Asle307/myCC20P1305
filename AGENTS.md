@@ -7,12 +7,16 @@ changing a block, read `README.md`, its specification under
 
 ## Configuration scope
 
-`main` contains the eight native algorithm modules under `rtl/`, their
-verification sources under `dv/`, and the supporting documentation, fixture
-tools and native Vivado project. The native top is `aead_cc20_p1305`.
-`axi4l` and `axi4l-axi4s-dma` are independent integration branches derived
-from this core. Keep peripheral wrappers, peripheral benches, IP packages,
-board designs and host software on their respective integration branches.
+This branch owns the AXI4-Stream/DMA configuration. The peripheral top is
+`aead_axi_dma`; AXI4-Lite carries session configuration/control only, and
+AXI4-Stream carries all message data. Its wrappers are `rtl/aead_axi_dma.v`
+and `rtl/aead_axis.v`, bench is `dv/tb_aead_axi_dma.v`, package is
+`vivado/ip_repo/aead_axi_dma_1_0/`, board project is
+`vivado/kv260_dma/kv260_dma.xpr`, and host is `software/aead_dma_uio.c`.
+Keep this tree self-contained for that transport. Per-word MMIO packages,
+projects, hosts and guides belong to `axi4l`. Preserve the native modules,
+specifications and fixtures shared with `main`. Maintained HDL lives under
+`rtl/`; packaged HDL copies must match it.
 
 ## Source and documentation contracts
 
@@ -20,6 +24,9 @@ board designs and host software on their respective integration branches.
 - `docs/interfaces/aead_stream.md` defines the native word interface. Preserve its framing, word order and stall behavior.
 - `dv/README.md` describes native regression and custom fixtures. `script/README.md` describes fixture generation and repository tools.
 - `vivado/core/README.md` describes the native GUI project. `docs/figures/README.md` indexes editable diagrams and previews.
+- Read `docs/architecture/peripheral.md`, `docs/architecture/interface_analysis.md`, and `docs/interfaces/aead_axi_dma.md` before changing the peripheral.
+- Use `dv/INTERFACE.md` for peripheral verification, the package and board READMEs for integration, and `software/README.md` for the host contract.
+- Interface references are recorded in `docs/interfaces/integration_references.md`.
 
 ## RTL style
 

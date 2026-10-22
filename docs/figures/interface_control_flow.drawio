@@ -1,0 +1,467 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false" version="31.1.8">
+  <diagram id="page1" name="AXI_LITE_WRITE">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="2031" pageHeight="713" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1__2" value="AXI_LITE_WRITE — rtl/aead_axi_dma.v" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n1">
+          <mxGeometry width="831.0" height="40" as="geometry" x="250" y="20" />
+        </mxCell>
+        <mxCell id="n2__2" value="WAIT_CHANNELS&lt;br&gt;hold AW and W independently" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n2">
+          <mxGeometry width="279" height="68" as="geometry" x="802.0" y="100.0" />
+        </mxCell>
+        <mxCell id="n3__2" value="CHECK_WRITE&lt;br&gt;both address and data held" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n3">
+          <mxGeometry width="270" height="68" as="geometry" x="659.5" y="240.0" />
+        </mxCell>
+        <mxCell id="n4__2" value="APPLY_WRITE&lt;br&gt;one accepted register command" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n4">
+          <mxGeometry width="297" height="68" as="geometry" x="250.0" y="380.0" />
+        </mxCell>
+        <mxCell id="n5__2" value="REJECT_WRITE&lt;br&gt;no partial command side effect" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n5">
+          <mxGeometry width="306" height="68" as="geometry" x="641.5" y="380.0" />
+        </mxCell>
+        <mxCell id="n6__2" value="HOLD_B&lt;br&gt;hold BVALID and BRESP" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n6">
+          <mxGeometry width="225" height="68" as="geometry" x="682.0" y="520.0" />
+        </mxCell>
+        <mxCell id="n7__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n7" data-transition="T01" data-condition="both channels accepted">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="865.75" y="168.25" as="sourcePoint" />
+            <mxPoint x="865.75" y="239.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n8__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n8" data-transition="T02" data-condition="aligned / strobes / command legal">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="659.05" y="274.0" as="sourcePoint" />
+            <mxPoint x="398.5" y="379.75" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="398.5" y="274.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n9__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n9" data-transition="T03" data-condition="illegal access or command">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="794.5" y="308.25" as="sourcePoint" />
+            <mxPoint x="794.5" y="379.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n10__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n10" data-transition="T04" data-condition="OKAY response">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="398.5" y="448.25" as="sourcePoint" />
+            <mxPoint x="681.55" y="554.0" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="398.5" y="554.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n11__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n11" data-transition="T05" data-condition="SLVERR and sticky ERROR">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="794.5" y="448.25" as="sourcePoint" />
+            <mxPoint x="794.5" y="519.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n12__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n12" data-transition="T06" data-condition="BREADY">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="907.27" y="554.0" as="sourcePoint" />
+            <mxPoint x="1014.25" y="168.37" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1014.25" y="554.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n13__2" value="Transition conditions" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n13">
+          <mxGeometry width="650" height="28" as="geometry" x="1181.0" y="80" />
+        </mxCell>
+        <mxCell id="n14__2" value="T01 — both channels accepted" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n14">
+          <mxGeometry width="650" height="38" as="geometry" x="1181.0" y="130" />
+        </mxCell>
+        <mxCell id="n15__2" value="T02 — aligned / strobes / command legal" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n15">
+          <mxGeometry width="650" height="38" as="geometry" x="1181.0" y="176" />
+        </mxCell>
+        <mxCell id="n16__2" value="T03 — illegal access or command" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n16">
+          <mxGeometry width="650" height="38" as="geometry" x="1181.0" y="222" />
+        </mxCell>
+        <mxCell id="n17__2" value="T04 — OKAY response" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n17">
+          <mxGeometry width="650" height="38" as="geometry" x="1181.0" y="268" />
+        </mxCell>
+        <mxCell id="n18__2" value="T05 — SLVERR and sticky ERROR" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n18">
+          <mxGeometry width="650" height="38" as="geometry" x="1181.0" y="314" />
+        </mxCell>
+        <mxCell id="n19__2" value="T06 — BREADY" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n19">
+          <mxGeometry width="650" height="38" as="geometry" x="1181.0" y="360" />
+        </mxCell>
+        <mxCell id="n20__2" value="Synchronous reset aborts the peripheral. Conceptual bus/host phases are not extra RTL state encodings; only aead_axis uses the displayed ST_ states." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n20">
+          <mxGeometry width="850" height="55" as="geometry" x="250" y="613.0" />
+        </mxCell>
+        <mxCell id="n21__2" value="T01" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n21">
+          <mxGeometry width="45" height="27" as="geometry" x="807.88" y="174.18" />
+        </mxCell>
+        <mxCell id="n22__2" value="T02" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n22">
+          <mxGeometry width="45" height="27" as="geometry" x="443.78" y="240.0" />
+        </mxCell>
+        <mxCell id="n23__2" value="T03" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n23">
+          <mxGeometry width="45" height="27" as="geometry" x="736.62" y="314.18" />
+        </mxCell>
+        <mxCell id="n24__2" value="T04" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n24">
+          <mxGeometry width="45" height="27" as="geometry" x="443.52" y="520.0" />
+        </mxCell>
+        <mxCell id="n25__2" value="T05" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n25">
+          <mxGeometry width="45" height="27" as="geometry" x="736.62" y="454.18" />
+        </mxCell>
+        <mxCell id="n26__2" value="T06" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n26">
+          <mxGeometry width="45" height="27" as="geometry" x="956.38" y="396.43" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page2" name="AXI_LITE_READ">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="1700" pageHeight="573" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1__2" value="AXI_LITE_READ — rtl/aead_axi_dma.v" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n1">
+          <mxGeometry width="800" height="40" as="geometry" x="250" y="20" />
+        </mxCell>
+        <mxCell id="n2__2" value="WAIT_AR&lt;br&gt;accept ARVALID with ARREADY" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n2">
+          <mxGeometry width="279" height="68" as="geometry" x="377.0" y="100.0" />
+        </mxCell>
+        <mxCell id="n3__2" value="SNAPSHOT&lt;br&gt;capture data and response" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n3">
+          <mxGeometry width="261" height="68" as="geometry" x="250.0" y="240.0" />
+        </mxCell>
+        <mxCell id="n4__2" value="HOLD_R&lt;br&gt;hold RVALID / RDATA / RRESP" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n4">
+          <mxGeometry width="279" height="68" as="geometry" x="377.0" y="380.0" />
+        </mxCell>
+        <mxCell id="n5__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n5" data-transition="T01" data-condition="AR handshake">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="444.0" y="168.25" as="sourcePoint" />
+            <mxPoint x="444.0" y="239.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n6__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n6" data-transition="T02" data-condition="aligned read or unaligned SLVERR">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="444.0" y="308.25" as="sourcePoint" />
+            <mxPoint x="444.0" y="379.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n7__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n7" data-transition="T03" data-condition="RREADY">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="583.5" y="379.67" as="sourcePoint" />
+            <mxPoint x="583.5" y="168.18" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n8__2" value="Transition conditions" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n8">
+          <mxGeometry width="650" height="28" as="geometry" x="756.0" y="80" />
+        </mxCell>
+        <mxCell id="n9__2" value="T01 — AR handshake" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n9">
+          <mxGeometry width="650" height="38" as="geometry" x="756.0" y="130" />
+        </mxCell>
+        <mxCell id="n10__2" value="T02 — aligned read or unaligned SLVERR" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n10">
+          <mxGeometry width="650" height="38" as="geometry" x="756.0" y="176" />
+        </mxCell>
+        <mxCell id="n11__2" value="T03 — RREADY" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n11">
+          <mxGeometry width="650" height="38" as="geometry" x="756.0" y="222" />
+        </mxCell>
+        <mxCell id="n12__2" value="Synchronous reset aborts the peripheral. Conceptual bus/host phases are not extra RTL state encodings; only aead_axis uses the displayed ST_ states." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n12">
+          <mxGeometry width="850" height="55" as="geometry" x="250" y="473.0" />
+        </mxCell>
+        <mxCell id="n13__2" value="T01" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n13">
+          <mxGeometry width="45" height="27" as="geometry" x="386.12" y="174.18" />
+        </mxCell>
+        <mxCell id="n14__2" value="T02" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n14">
+          <mxGeometry width="45" height="27" as="geometry" x="386.12" y="314.18" />
+        </mxCell>
+        <mxCell id="n15__2" value="T03" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n15">
+          <mxGeometry width="45" height="27" as="geometry" x="525.62" y="255.68" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page3" name="aead_axis">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="1830" pageHeight="853" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1__2" value="aead_axis — rtl/aead_axis.v" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n1">
+          <mxGeometry width="800" height="40" as="geometry" x="250" y="20" />
+        </mxCell>
+        <mxCell id="n2__2" value="ST_IDLE&lt;br&gt;wait native START readiness" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n2">
+          <mxGeometry width="279" height="68" as="geometry" x="601.0" y="100.0" />
+        </mxCell>
+        <mxCell id="n3__2" value="ST_AAD&lt;br&gt;derive native AAD count / LAST" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n3">
+          <mxGeometry width="306" height="68" as="geometry" x="440.5" y="240.0" />
+        </mxCell>
+        <mxCell id="n4__2" value="ST_PAYLOAD&lt;br&gt;derive native payload count / LAST" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n4">
+          <mxGeometry width="342" height="68" as="geometry" x="413.5" y="380.0" />
+        </mxCell>
+        <mxCell id="n5__2" value="ST_TAG&lt;br&gt;four received decrypt tag words" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n5">
+          <mxGeometry width="315" height="68" as="geometry" x="250.0" y="520.0" />
+        </mxCell>
+        <mxCell id="n6__2" value="ST_WAIT&lt;br&gt;wait core completion" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n6">
+          <mxGeometry width="216" height="68" as="geometry" x="599.5" y="660.0" />
+        </mxCell>
+        <mxCell id="n7__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n7" data-transition="T01" data-condition="START and start-ready">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="673.75" y="168.25" as="sourcePoint" />
+            <mxPoint x="673.75" y="239.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n8__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n8" data-transition="T02" data-condition="last native AAD transfer">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="593.5" y="308.25" as="sourcePoint" />
+            <mxPoint x="593.5" y="379.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n9__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n9" data-transition="T03" data-condition="last payload transfer / encrypt">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="703.5" y="448.33" as="sourcePoint" />
+            <mxPoint x="703.5" y="659.824" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n10__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n10" data-transition="T04" data-condition="last payload transfer / decrypt">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="489.25" y="448.25" as="sourcePoint" />
+            <mxPoint x="489.25" y="519.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n11__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n11" data-transition="T05" data-condition="fourth received tag transfer">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="565.47" y="554.0" as="sourcePoint" />
+            <mxPoint x="651.5" y="659.752" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="651.5" y="554.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n12__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n12" data-transition="T06" data-condition="core DONE">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="785.5" y="659.81" as="sourcePoint" />
+            <mxPoint x="785.5" y="168.45000000000005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n13__2" value="Transition conditions" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n13">
+          <mxGeometry width="650" height="28" as="geometry" x="980.0" y="80" />
+        </mxCell>
+        <mxCell id="n14__2" value="T01 — START and start-ready" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n14">
+          <mxGeometry width="650" height="38" as="geometry" x="980.0" y="130" />
+        </mxCell>
+        <mxCell id="n15__2" value="T02 — last native AAD transfer" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n15">
+          <mxGeometry width="650" height="38" as="geometry" x="980.0" y="176" />
+        </mxCell>
+        <mxCell id="n16__2" value="T03 — last payload transfer / encrypt" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n16">
+          <mxGeometry width="650" height="38" as="geometry" x="980.0" y="222" />
+        </mxCell>
+        <mxCell id="n17__2" value="T04 — last payload transfer / decrypt" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n17">
+          <mxGeometry width="650" height="38" as="geometry" x="980.0" y="268" />
+        </mxCell>
+        <mxCell id="n18__2" value="T05 — fourth received tag transfer" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n18">
+          <mxGeometry width="650" height="38" as="geometry" x="980.0" y="314" />
+        </mxCell>
+        <mxCell id="n19__2" value="T06 — core DONE" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n19">
+          <mxGeometry width="650" height="38" as="geometry" x="980.0" y="360" />
+        </mxCell>
+        <mxCell id="n20__2" value="Synchronous reset aborts the peripheral. Conceptual bus/host phases are not extra RTL state encodings; only aead_axis uses the displayed ST_ states." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n20">
+          <mxGeometry width="850" height="55" as="geometry" x="250" y="753.0" />
+        </mxCell>
+        <mxCell id="n21__2" value="T01" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n21">
+          <mxGeometry width="45" height="27" as="geometry" x="615.88" y="174.17999999999995" />
+        </mxCell>
+        <mxCell id="n22__2" value="T02" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n22">
+          <mxGeometry width="45" height="27" as="geometry" x="535.62" y="314.18" />
+        </mxCell>
+        <mxCell id="n23__2" value="T03" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n23">
+          <mxGeometry width="45" height="27" as="geometry" x="645.62" y="514.3199999999999" />
+        </mxCell>
+        <mxCell id="n24__2" value="T04" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n24">
+          <mxGeometry width="45" height="27" as="geometry" x="431.38" y="454.18" />
+        </mxCell>
+        <mxCell id="n25__2" value="T05" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n25">
+          <mxGeometry width="45" height="27" as="geometry" x="593.62" y="514.11" />
+        </mxCell>
+        <mxCell id="n26__2" value="T06" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n26">
+          <mxGeometry width="45" height="27" as="geometry" x="798.38" y="395.89" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page4" name="DMA_HOST_ORDER">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="1952" pageHeight="1413" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1__2" value="DMA_HOST_ORDER — software/aead_dma_uio.c" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n1">
+          <mxGeometry width="800" height="40" as="geometry" x="250" y="20" />
+        </mxCell>
+        <mxCell id="n2__2" value="PREFLIGHT&lt;br&gt;signature / idle / ownership" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n2">
+          <mxGeometry width="288" height="68" as="geometry" x="667.0" y="100.0" />
+        </mxCell>
+        <mxCell id="n3__2" value="PREPARE&lt;br&gt;pack TX / poison disjoint RX" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n3">
+          <mxGeometry width="288" height="68" as="geometry" x="667.0" y="240.0" />
+        </mxCell>
+        <mxCell id="n4__2" value="CONFIGURE&lt;br&gt;key / nonce / original lengths" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n4">
+          <mxGeometry width="306" height="68" as="geometry" x="511.0" y="380.0" />
+        </mxCell>
+        <mxCell id="n5__2" value="ARM_RX&lt;br&gt;arm S2MM if nonempty output" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n5">
+          <mxGeometry width="279" height="68" as="geometry" x="524.5" y="520.0" />
+        </mxCell>
+        <mxCell id="n6__2" value="ARM_TX&lt;br&gt;arm MM2S if nonempty input" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n6">
+          <mxGeometry width="270" height="68" as="geometry" x="529.0" y="660.0" />
+        </mxCell>
+        <mxCell id="n7__2" value="START&lt;br&gt;issue AEAD START" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n7">
+          <mxGeometry width="180" height="68" as="geometry" x="574.0" y="800.0" />
+        </mxCell>
+        <mxCell id="n8__2" value="POLL&lt;br&gt;core and DMA concurrently" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n8">
+          <mxGeometry width="261" height="68" as="geometry" x="533.5" y="940.0" />
+        </mxCell>
+        <mxCell id="n9__2" value="VERIFY&lt;br&gt;RX length / words / AUTH / cycles" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n9">
+          <mxGeometry width="333" height="68" as="geometry" x="293.5" y="1080.0" />
+        </mxCell>
+        <mxCell id="n10__2" value="COMPLETE&lt;br&gt;report verified fixture result" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n10">
+          <mxGeometry width="306" height="68" as="geometry" x="250.0" y="1220.0" />
+        </mxCell>
+        <mxCell id="n11__2" value="RECOVER&lt;br&gt;reset DMA and AEAD / discard output" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;strokeWidth=2;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="32" vlsit_library_cell="2" vlsit_library_instance="n11">
+          <mxGeometry width="351" height="68" as="geometry" x="650.5" y="1220.0" />
+        </mxCell>
+        <mxCell id="n12__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n12" data-transition="T01" data-condition="matching idle device">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="811.0" y="168.25" as="sourcePoint" />
+            <mxPoint x="811.0" y="239.5999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n13__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n13" data-transition="T02" data-condition="uncached reserved buffers ready">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="742.0" y="308.25" as="sourcePoint" />
+            <mxPoint x="742.0" y="379.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n14__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n14" data-transition="T03" data-condition="configuration accepted">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="664.0" y="448.25" as="sourcePoint" />
+            <mxPoint x="664.0" y="519.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n15__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n15" data-transition="T04" data-condition="receive armed or skipped">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="664.0" y="588.25" as="sourcePoint" />
+            <mxPoint x="664.0" y="659.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n16__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n16" data-transition="T05" data-condition="transmit armed or skipped">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="664.0" y="728.25" as="sourcePoint" />
+            <mxPoint x="664.0" y="799.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n17__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n17" data-transition="T06" data-condition="accepted session">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="664.0" y="868.25" as="sourcePoint" />
+            <mxPoint x="664.0" y="939.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n18__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n18" data-transition="T07" data-condition="both DMA directions and core done">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580.0" y="1008.25" as="sourcePoint" />
+            <mxPoint x="580.0" y="1079.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n19__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n19" data-transition="T08" data-condition="expected words and auth / valid cycles">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="424.75" y="1148.25" as="sourcePoint" />
+            <mxPoint x="424.75" y="1219.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n20__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n20" data-transition="T09" data-condition="DMA/core error or timeout">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="722.5" y="1008.33" as="sourcePoint" />
+            <mxPoint x="722.5" y="1219.824" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n21__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n21" data-transition="T10" data-condition="length/data/auth/counter mismatch">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="591.25" y="1148.25" as="sourcePoint" />
+            <mxPoint x="650.1800000000001" y="1254.0" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="591.25" y="1254.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n22__2" value="" style="endArrow=block;html=1;rounded=0;fontSize=18;strokeWidth=2;endFill=1;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;jumpStyle=arc;jumpSize=12;" edge="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="1" vlsit_library_cell="2" vlsit_library_instance="n22" data-transition="T11" data-condition="reload whole message">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="886.0" y="1219.7" as="sourcePoint" />
+            <mxPoint x="886.0" y="308.28" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n23__2" value="Transition conditions" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n23">
+          <mxGeometry width="650" height="28" as="geometry" x="1101.5" y="80" />
+        </mxCell>
+        <mxCell id="n24__2" value="T01 — matching idle device" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n24">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="130" />
+        </mxCell>
+        <mxCell id="n25__2" value="T02 — uncached reserved buffers ready" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n25">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="176" />
+        </mxCell>
+        <mxCell id="n26__2" value="T03 — configuration accepted" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n26">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="222" />
+        </mxCell>
+        <mxCell id="n27__2" value="T04 — receive armed or skipped" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n27">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="268" />
+        </mxCell>
+        <mxCell id="n28__2" value="T05 — transmit armed or skipped" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n28">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="314" />
+        </mxCell>
+        <mxCell id="n29__2" value="T06 — accepted session" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n29">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="360" />
+        </mxCell>
+        <mxCell id="n30__2" value="T07 — both DMA directions and core done" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n30">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="406" />
+        </mxCell>
+        <mxCell id="n31__2" value="T08 — expected words and auth / valid cycles" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n31">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="452" />
+        </mxCell>
+        <mxCell id="n32__2" value="T09 — DMA/core error or timeout" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n32">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="498" />
+        </mxCell>
+        <mxCell id="n33__2" value="T10 — length/data/auth/counter mismatch" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n33">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="544" />
+        </mxCell>
+        <mxCell id="n34__2" value="T11 — reload whole message" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n34">
+          <mxGeometry width="650" height="38" as="geometry" x="1101.5" y="590" />
+        </mxCell>
+        <mxCell id="n35__2" value="Synchronous reset aborts the peripheral. Conceptual bus/host phases are not extra RTL state encodings; only aead_axis uses the displayed ST_ states." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n35">
+          <mxGeometry width="850" height="55" as="geometry" x="250" y="1313.0" />
+        </mxCell>
+        <mxCell id="n36__2" value="T01" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n36">
+          <mxGeometry width="45" height="27" as="geometry" x="753.12" y="174.20000000000005" />
+        </mxCell>
+        <mxCell id="n37__2" value="T02" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n37">
+          <mxGeometry width="45" height="27" as="geometry" x="684.12" y="314.17999999999995" />
+        </mxCell>
+        <mxCell id="n38__2" value="T03" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n38">
+          <mxGeometry width="45" height="27" as="geometry" x="606.12" y="454.17999999999995" />
+        </mxCell>
+        <mxCell id="n39__2" value="T04" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n39">
+          <mxGeometry width="45" height="27" as="geometry" x="606.12" y="594.18" />
+        </mxCell>
+        <mxCell id="n40__2" value="T05" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n40">
+          <mxGeometry width="45" height="27" as="geometry" x="606.12" y="734.18" />
+        </mxCell>
+        <mxCell id="n41__2" value="T06" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n41">
+          <mxGeometry width="45" height="27" as="geometry" x="606.12" y="874.1800000000001" />
+        </mxCell>
+        <mxCell id="n42__2" value="T07" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n42">
+          <mxGeometry width="45" height="27" as="geometry" x="522.12" y="1014.1800000000001" />
+        </mxCell>
+        <mxCell id="n43__2" value="T08" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n43">
+          <mxGeometry width="45" height="27" as="geometry" x="366.88" y="1154.18" />
+        </mxCell>
+        <mxCell id="n44__2" value="T09" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n44">
+          <mxGeometry width="45" height="27" as="geometry" x="664.62" y="1084.32" />
+        </mxCell>
+        <mxCell id="n45__2" value="T10" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n45">
+          <mxGeometry width="45" height="27" as="geometry" x="533.38" y="1180.834" />
+        </mxCell>
+        <mxCell id="n46__2" value="T11" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=18;fontColor=#000000;" vertex="1" parent="1" vlsit_library_sha256="D1631ACF98A920526B235E8970FEDDC9305EA2F0D6A35C6529CD220D62AFABB6" vlsit_library_entry="0" vlsit_library_cell="2" vlsit_library_instance="n46">
+          <mxGeometry width="45" height="27" as="geometry" x="828.88" y="745.74" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

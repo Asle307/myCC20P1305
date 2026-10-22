@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wave_config>
+   <wave_state />
+   <db_ref_list>
+      <db_ref path="tb_aead_axi_dma_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_aead_axi_dma" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting />
+   <column_width_setting />
+   <WVObjectSize size="5" />
+   <wvobject type="group" fp_name="group_0">
+      <obj_property name="label">AXI progress</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/i_clk">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/i_rst_n">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_cases">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_rejected">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_cycle">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_1">
+      <obj_property name="label">Write</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_awaddr">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_awvalid">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/w_awready">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_wdata">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_wstrb">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_wvalid">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/w_wready">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/w_bresp">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/w_bvalid">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_bready">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_2">
+      <obj_property name="label">Read</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_araddr">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_arvalid">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/w_arready">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/w_rdata">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/w_rresp">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/w_rvalid">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_rready">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_3">
+      <obj_property name="label">Reference</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_input_word">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_output_word">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_reference_data">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_reference_control">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/r_status">
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_4">
+      <obj_property name="label">DMA streams and cycles</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/s_axis_tdata"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/s_axis_tkeep"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/s_axis_tvalid"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/s_axis_tready"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/s_axis_tlast"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/m_axis_tdata"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/m_axis_tkeep"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/m_axis_tvalid"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/m_axis_tready"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/m_axis_tlast"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+      <wvobject type="array" fp_name="/tb_aead_axi_dma/u_dut/r_cycles"><obj_property name="Radix">HEXRADIX</obj_property></wvobject>
+   </wvobject>
+</wave_config>
