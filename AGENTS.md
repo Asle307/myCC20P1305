@@ -7,12 +7,14 @@ changing a block, read `README.md`, its specification under
 
 ## Configuration scope
 
-`main` contains the eight native algorithm modules under `rtl/`, their
-verification sources under `dv/`, and the supporting documentation, fixture
-tools and native Vivado project. The native top is `aead_cc20_p1305`.
-`axi4l` and `axi4l-axi4s-dma` are independent integration branches derived
-from this core. Keep peripheral wrappers, peripheral benches, IP packages,
-board designs and host software on their respective integration branches.
+This branch owns the AXI4-Lite MMIO configuration. The peripheral top is
+`aead_axi4l`; AXI4-Lite carries both control and message words. Its bench is
+`dv/tb_aead_axi4l.v`, package is `vivado/ip_repo/aead_axi4l_1_0/`, board
+project is `vivado/kv260/kv260.xpr`, and host is `software/aead_uio.c`.
+Keep this tree self-contained for that transport. AXI4-Stream/DMA wrappers,
+packages, projects, hosts and guides belong to `axi4l-axi4s-dma`.
+Preserve the native modules, specifications and fixtures shared with `main`.
+Maintained HDL lives under `rtl/`; packaged HDL copies must match it.
 
 ## Source and documentation contracts
 
@@ -20,6 +22,9 @@ board designs and host software on their respective integration branches.
 - `docs/interfaces/aead_stream.md` defines the native word interface. Preserve its framing, word order and stall behavior.
 - `dv/README.md` describes native regression and custom fixtures. `script/README.md` describes fixture generation and repository tools.
 - `vivado/core/README.md` describes the native GUI project. `docs/figures/README.md` indexes editable diagrams and previews.
+- Read `docs/architecture/peripheral.md`, `docs/architecture/interface_analysis.md`, and `docs/interfaces/aead_axi4l.md` before changing the peripheral.
+- Use `dv/INTERFACE.md` for peripheral verification, the package and board READMEs for integration, and `software/README.md` for the host contract.
+- Interface references are recorded in `docs/interfaces/integration_references.md`.
 
 ## RTL style
 

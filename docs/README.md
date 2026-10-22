@@ -17,3 +17,11 @@ These describe the maintained RTL, not a proposed architecture. The core has
 custom native handshakes; it is not itself an AXI peripheral. Integration
 branches add their own interface contracts and normative interface references.
 See [DV](../dv/README.md) for simulation and fixture handling.
+
+## AXI4-Lite MMIO integration
+
+This branch adds [peripheral architecture](architecture/peripheral.md),
+[register contract](interfaces/aead_axi4l.md),
+[interface analysis](architecture/interface_analysis.md) and
+[integration references](interfaces/integration_references.md).
+The core bibliography above remains the same eight PDFs.

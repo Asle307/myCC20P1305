@@ -12,7 +12,7 @@ Generate both catalogs from the repository root before simulation:
 .venv/bin/python script/gen_vectors.py generate --profile rfc
 ```
 
-The default simulation top is `tb_aead`; `tb_aead_custom` runs user fixtures.
+Native simulation uses `tb_aead`; `tb_aead_custom` runs user fixtures.
 Use **Set as Top**, then **Run Behavioral Simulation** in the GUI. Require the
 bench's final PASS, not merely successful compilation. The project copies the
 two catalogs; their absolute case paths require regeneration after a move.
@@ -29,3 +29,9 @@ with setup slack at least +0.050 ns and nonnegative hold slack. Only fresh
 reports establish utilization or routed timing. RTL simulation does not prove
 implementation frequency. After closing Vivado, preview `make clean DRY_RUN=1`
 or `make distclean DRY_RUN=1` before removing generated products.
+
+On this integration branch, `tb_aead_axi4l` is the default peripheral top.
+Its two wrapper sources are simulation-only. Use **Set as Top** to select
+`tb_aead` or `tb_aead_custom` for native verification, then restore the peripheral
+top. See [peripheral DV](../../dv/INTERFACE.md) and
+[KV260 integration](../kv260/README.md).

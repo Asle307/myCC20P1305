@@ -29,3 +29,21 @@
  are documented in the [ChaCha20 architecture](../architecture/chacha20.md).
  SVG files are exported from the corresponding draw.io page; edit the source
  and refresh its preview together. No diagram PDF is added to the bibliography.
+
+## axi4l interface extension
+
+The native figures above are inherited without modification. The interface
+hierarchy expands the two added wrapper levels, then points to that complete
+native hierarchy. Detailed signals and qualifiers are in
+[interface analysis](../architecture/interface_analysis.md).
+
+| Editable source | Page | Preview |
+|---|---|---|
+| [Interface hierarchy](interface_hierarchy.drawio) | Peripheral | [SVG](interface_hierarchy_1.svg) |
+| Same source | Native boundary | [SVG](interface_hierarchy_2.svg) |
+| [Interface flow](interface_control_flow.drawio) | AXI_LITE_WRITE | [SVG](interface_control_1.svg) |
+| Same source | AXI_LITE_READ | [SVG](interface_control_2.svg) |
+| Same source | WORD_SLOT_OWNERSHIP | [SVG](interface_control_3.svg) |
+
+Transaction flow boxes describe ownership and ordering; they are not newly
+introduced hardware states. A framing error is a latch, not an adapter state.
