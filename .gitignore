@@ -1,0 +1,38 @@
+# Generated Vivado/session/simulator output; .Xil at any depth.
+.Xil/
+*.log
+*.jou
+*.str
+*.wdb
+*.wdb.journal
+*.vcd
+*.pb
+clockInfo.txt
+*.bit
+*.bin
+*.xsa
+*.dcp
+*.rpt
+webtalk*
+hs_err_pid*
+
+# Rebuildable project products. Keep .xpr/.srcs, HDL, XDC and packages.
+/vivado/**/*.cache/
+/vivado/**/*.hw/
+/vivado/**/*.sim/
+/vivado/**/*.runs/
+/vivado/**/*.gen/
+/vivado/**/*.ip_user_files/
+/vivado/**/*.srcs/utils_1/
+/vivado/**/*.xpr.backup*
+
+# Local software products, exported deliverables and fixtures.
+/build/
+/artifacts/
+/dv/vectors/
+/vectors/
+.venv/
+__pycache__/
+*.py[cod]
+*.tmp
+*~

@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wave_config>
+   <wave_state />
+   <db_ref_list>
+      <db_ref path="tb_aead_custom_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_aead_custom" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting />
+   <column_width_setting />
+   <WVObjectSize size="7" />
+   <wvobject type="group" fp_name="group_0">
+      <obj_property name="label">Progress</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/w_phase_name">
+         <obj_property name="ElementShortName">w_phase_name</obj_property>
+         <obj_property name="ObjectShortName">w_phase_name</obj_property>
+         <obj_property name="Radix">ASCIIRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/r_case">
+         <obj_property name="ElementShortName">r_case</obj_property>
+         <obj_property name="ObjectShortName">r_case</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/r_cycle">
+         <obj_property name="ElementShortName">r_cycle</obj_property>
+         <obj_property name="ObjectShortName">r_cycle</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/r_completed">
+         <obj_property name="ElementShortName">r_completed</obj_property>
+         <obj_property name="ObjectShortName">r_completed</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/r_rejected">
+         <obj_property name="ElementShortName">r_rejected</obj_property>
+         <obj_property name="ObjectShortName">r_rejected</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/r_resets">
+         <obj_property name="ElementShortName">r_resets</obj_property>
+         <obj_property name="ObjectShortName">r_resets</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/i_clk">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/i_rst_n">
+         <obj_property name="ElementShortName">i_rst_n</obj_property>
+         <obj_property name="ObjectShortName">i_rst_n</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_1">
+      <obj_property name="label">Configuration</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/i_key">
+         <obj_property name="ElementShortName">i_key</obj_property>
+         <obj_property name="ObjectShortName">i_key</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/i_nonce">
+         <obj_property name="ElementShortName">i_nonce</obj_property>
+         <obj_property name="ObjectShortName">i_nonce</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/i_mode">
+         <obj_property name="ElementShortName">i_mode</obj_property>
+         <obj_property name="ObjectShortName">i_mode</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/i_start">
+         <obj_property name="ElementShortName">i_start</obj_property>
+         <obj_property name="ObjectShortName">i_start</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/o_start_ready">
+         <obj_property name="ElementShortName">o_start_ready</obj_property>
+         <obj_property name="ObjectShortName">o_start_ready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_2">
+      <obj_property name="label">Input</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/i_data">
+         <obj_property name="ElementShortName">i_data</obj_property>
+         <obj_property name="ObjectShortName">i_data</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/i_data_byte_count">
+         <obj_property name="ElementShortName">i_data_byte_count</obj_property>
+         <obj_property name="ObjectShortName">i_data_byte_count</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/i_is_aad">
+         <obj_property name="ElementShortName">i_is_aad</obj_property>
+         <obj_property name="ObjectShortName">i_is_aad</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/i_data_last">
+         <obj_property name="ElementShortName">i_data_last</obj_property>
+         <obj_property name="ObjectShortName">i_data_last</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/i_data_valid">
+         <obj_property name="ElementShortName">i_data_valid</obj_property>
+         <obj_property name="ObjectShortName">i_data_valid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/o_data_ready">
+         <obj_property name="ElementShortName">o_data_ready</obj_property>
+         <obj_property name="ObjectShortName">o_data_ready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_3">
+      <obj_property name="label">Output</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/o_data">
+         <obj_property name="ElementShortName">o_data</obj_property>
+         <obj_property name="ObjectShortName">o_data</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/o_data_byte_count">
+         <obj_property name="ElementShortName">o_data_byte_count</obj_property>
+         <obj_property name="ObjectShortName">o_data_byte_count</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/o_is_tag">
+         <obj_property name="ElementShortName">o_is_tag</obj_property>
+         <obj_property name="ObjectShortName">o_is_tag</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/o_data_last">
+         <obj_property name="ElementShortName">o_data_last</obj_property>
+         <obj_property name="ObjectShortName">o_data_last</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/o_data_valid">
+         <obj_property name="ElementShortName">o_data_valid</obj_property>
+         <obj_property name="ObjectShortName">o_data_valid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/i_data_ready">
+         <obj_property name="ElementShortName">i_data_ready</obj_property>
+         <obj_property name="ObjectShortName">i_data_ready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/o_done">
+         <obj_property name="ElementShortName">o_done</obj_property>
+         <obj_property name="ObjectShortName">o_done</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/o_auth_ok">
+         <obj_property name="ElementShortName">o_auth_ok</obj_property>
+         <obj_property name="ObjectShortName">o_auth_ok</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_4">
+      <obj_property name="label">Reference</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/w_reference_data">
+         <obj_property name="ElementShortName">w_reference_data</obj_property>
+         <obj_property name="ObjectShortName">w_reference_data</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/w_reference_control">
+         <obj_property name="ElementShortName">w_reference_control</obj_property>
+         <obj_property name="ObjectShortName">w_reference_control</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/w_reference_tag">
+         <obj_property name="ElementShortName">w_reference_tag</obj_property>
+         <obj_property name="ObjectShortName">w_reference_tag</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/w_expected_auth">
+         <obj_property name="ElementShortName">w_expected_auth</obj_property>
+         <obj_property name="ObjectShortName">w_expected_auth</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/w_sample_valid">
+         <obj_property name="ElementShortName">w_sample_valid</obj_property>
+         <obj_property name="ObjectShortName">w_sample_valid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/w_sample_match">
+         <obj_property name="ElementShortName">w_sample_match</obj_property>
+         <obj_property name="ObjectShortName">w_sample_match</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/r_output_word">
+         <obj_property name="ElementShortName">r_output_word</obj_property>
+         <obj_property name="ObjectShortName">r_output_word</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_5">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/u_dut/r_state">
+         <obj_property name="ElementShortName">r_state</obj_property>
+         <obj_property name="ObjectShortName">r_state</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/u_dut/r_input_data">
+         <obj_property name="ElementShortName">r_input_data</obj_property>
+         <obj_property name="ObjectShortName">r_input_data</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/u_dut/r_input_byte_count">
+         <obj_property name="ElementShortName">r_input_byte_count</obj_property>
+         <obj_property name="ObjectShortName">r_input_byte_count</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/u_dut/r_input_valid">
+         <obj_property name="ElementShortName">r_input_valid</obj_property>
+         <obj_property name="ObjectShortName">r_input_valid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/u_dut/r_payload_counter">
+         <obj_property name="ElementShortName">r_payload_counter</obj_property>
+         <obj_property name="ObjectShortName">r_payload_counter</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/u_dut/r_keystream_index">
+         <obj_property name="ElementShortName">r_keystream_index</obj_property>
+         <obj_property name="ObjectShortName">r_keystream_index</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group_6">
+      <obj_property name="label">ChaCha20</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded">true</obj_property>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/r_cc_requests">
+         <obj_property name="ElementShortName">r_cc_requests</obj_property>
+         <obj_property name="ObjectShortName">r_cc_requests</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_aead_custom/u_test/u_dut/w_cc_counter">
+         <obj_property name="ElementShortName">w_cc_counter</obj_property>
+         <obj_property name="ObjectShortName">w_cc_counter</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/u_dut/w_cc_request_valid">
+         <obj_property name="ElementShortName">w_cc_request_valid</obj_property>
+         <obj_property name="ObjectShortName">w_cc_request_valid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/u_dut/w_cc_request_ready">
+         <obj_property name="ElementShortName">w_cc_request_ready</obj_property>
+         <obj_property name="ObjectShortName">w_cc_request_ready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_aead_custom/u_test/u_dut/w_cc_result_valid">
+         <obj_property name="ElementShortName">w_cc_result_valid</obj_property>
+         <obj_property name="ObjectShortName">w_cc_result_valid</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
