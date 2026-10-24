@@ -1,0 +1,11 @@
+# Rebuildable application output; keep src/, linker configuration and _ide
+# launch/PS initialization files.
+/build/
+/export/
+/logs/
+/src/compile_commands.json
+/src/.clangd
+/src/README.txt
+*.elf
+*.map
+*.lock

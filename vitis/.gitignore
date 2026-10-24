@@ -1,0 +1,5 @@
+# Machine-local Vitis workspace state.
+/.metadata/
+/logs/
+/vitisWorkspace.json
+*.lock

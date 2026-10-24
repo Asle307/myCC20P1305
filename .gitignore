@@ -1,22 +1,24 @@
-# Generated Vivado/session/simulator output; .Xil at any depth.
+# Vivado logs, simulator data and generated products.
 .Xil/
-*.log
 *.jou
+*.log
 *.str
 *.wdb
 *.wdb.journal
 *.vcd
 *.pb
-clockInfo.txt
 *.bit
 *.bin
-*.xsa
+*.pdi
 *.dcp
 *.rpt
+*.xsa
 webtalk*
 hs_err_pid*
+clockInfo.txt
 
-# Rebuildable project products. Keep .xpr/.srcs, HDL, XDC and packages.
+# Rebuildable Vivado project output. Keep project sources, constraints,
+# packaged IP, block designs and saved GUI project files.
 /vivado/**/*.cache/
 /vivado/**/*.hw/
 /vivado/**/*.sim/
@@ -26,7 +28,41 @@ hs_err_pid*
 /vivado/**/*.srcs/utils_1/
 /vivado/**/*.xpr.backup*
 
-# Local software products, exported deliverables and fixtures.
+# Vitis binaries and compiler/build output at any project depth.
+*.elf
+*.o
+*.a
+*.d
+*.map
+*.su
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+CMakeFiles/
+build.ninja
+
+# Local Vitis builds and exported products. Keep component source, launch
+# configurations, platform settings and linker scripts.
+/vitis/**/build/
+/vitis/**/export/
+/vitis/**/resources/
+/vitis/**/hw/sdt/
+/vitis/**/bsp/include/
+/vitis/**/bsp/lib/
+/vitis/**/bsp/libsrc/
+/vitis/**/bsp/hw_artifacts/
+/vitis/**/bsp/CMakeFiles/
+/vitis/**/bsp/build.ninja
+/vitis/**/bsp/cmake_install.cmake
+/vitis/**/bsp/compile_commands.json
+/vitis/_ide/
+/vitis/.rigel_lopper/
+/vitis/**/_ide/logs/
+/vitis/**/.vitisWorkspace.json
+/vitis/**/src/README.txt
+/vitis/**/src/.clangd
+
+# Local host builds, exported deliverables and generated fixtures.
 /build/
 /artifacts/
 /dv/vectors/
@@ -36,3 +72,4 @@ __pycache__/
 *.py[cod]
 *.tmp
 *~
+.DS_Store
