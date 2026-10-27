@@ -3,6 +3,8 @@
 The fixture generator is `script/gen_vectors.py`, with one directory per case.
 It uses `cryptography` for golden ChaCha20-Poly1305 and Rich for console output;
 there is no interactive menu. Install `script/requirements.txt` into `.venv`.
+This guide covers native verification on `main`; see
+[peripheral verification](INTERFACE.md) for the AXI4-Lite wrapper.
 
 ## Generate and inspect
 
@@ -49,7 +51,8 @@ separators. AAD/plaintext hex and binary-file options are mutually exclusive.
 ## Vivado simulation
 
 Open `vivado/core/core.xpr`, set a simulation top, then run Behavioral
-Simulation. Select `tb_aead` for native regression. Generate the matching catalog
+Simulation. The saved top is `tb_aead_axi4l`; select `tb_aead` for native
+regression or `tb_aead_custom` for custom fixtures. Generate the matching catalog
 before selecting its bench. After changing fixtures, use Relaunch Simulation.
 
 | Top | Catalog | Extra stress |

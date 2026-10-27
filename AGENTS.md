@@ -7,14 +7,14 @@ changing a block, read `README.md`, its specification under
 
 ## Configuration scope
 
-This repository contains the native core and the AXI4-Lite MMIO configuration.
-The peripheral top is `aead_axi4l`; AXI4-Lite carries both control and message words. Its bench is
-`dv/tb_aead_axi4l.v`, package is `vivado/ip_repo/aead_axi4l_1_0/`, board
+The `main` branch owns the native core and the AXI4-Lite MMIO configuration.
+The peripheral top is `aead_axi4l`; AXI4-Lite carries both control and message
+words. Its bench is `dv/tb_aead_axi4l.v`, package is `vivado/ip_repo/aead_axi4l_1_0/`, board
 project is `vivado/kv260/kv260.xpr`, and host is `software/aead_uio.c`.
 Keep this tree self-contained for that transport. AXI4-Stream/DMA wrappers,
 packages, projects, hosts and guides belong to `axi4l-axi4s-dma`.
-Preserve the native modules, specifications and fixtures shared with the
-alternative integration branch.
+The AXI4-Stream/DMA branch is developed separately; keep its transport-specific
+changes out of `main`. Preserve native contracts when changing the wrapper.
 Maintained HDL lives under `rtl/`; packaged HDL copies must match it.
 
 ## Source and documentation contracts
@@ -47,8 +47,8 @@ Maintained HDL lives under `rtl/`; packaged HDL copies must match it.
 Use the Vivado GUI project `vivado/core/core.xpr` and follow its README.
 Run behavioral simulation after RTL changes and require the final bench PASS.
 Keep the existing cycle and handshake checks; documented block latency is a
-design contract. On integration branches, run the peripheral bench as well
-as native regression when shared RTL changes.
+design contract. On `main`, run the peripheral bench as well as native
+regression when shared RTL changes.
 
 Keep waveform presets under `dv/waves/`. Use `script/gen_vectors.py` for
 fixtures under `dv/vectors/`. Keep `dv/waves/gui.tcl` solely as the GUI
@@ -76,8 +76,8 @@ Follow the structure of the existing specifications: describe ports,
 clock/reset behavior, FSM transitions, timing and verification requirements
 from RTL and testbench evidence. Keep editable diagrams and SVG previews
 under `docs/figures/`; match hierarchy and transition conditions to RTL.
-Distinguish native handshakes from standard AXI interfaces on integration
-branches. Update affected contracts and diagrams when behavior changes.
+Distinguish native handshakes from the standard AXI4-Lite interface. Update
+affected contracts and diagrams when behavior changes.
 
 ## Generated output and cleanup
 

@@ -1,4 +1,4 @@
-# Native core design documents
+# Native core and AXI4-Lite design documents
 
 | Contract | Document |
 |---|---|
@@ -24,4 +24,7 @@ The AXI4-Lite integration includes [peripheral architecture](architecture/periph
 [register contract](interfaces/aead_axi4l.md),
 [interface analysis](architecture/interface_analysis.md) and
 [integration references](interfaces/integration_references.md).
+These documents describe the AXI4-Lite MMIO implementation maintained on
+`main`. The alternative AXI4-Stream/DMA transport is developed separately on
+`axi4l-axi4s-dma`; consult that branch for its interface and integration guides.
 The core bibliography above remains the same eight PDFs.

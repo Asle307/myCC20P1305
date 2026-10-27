@@ -73,4 +73,4 @@ See the [register contract](../interfaces/aead_axi4l.md),
 
 See [interface analysis](interface_analysis.md), [editable figures](../figures/README.md)
 and [integration references](../interfaces/integration_references.md). Native
-core requirements remain in the inherited specification.
+core requirements remain in the native core specification.

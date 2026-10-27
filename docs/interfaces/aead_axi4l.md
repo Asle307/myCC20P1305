@@ -127,9 +127,11 @@ provides RFC encrypt/decrypt/bad-tag checks and a pause-before-START option
 for ILA capture. It uses map0 at `0xA0000000` without the demo DMA driver.
 
 `dv/tb_aead_axi4l.v` exercises the AXI bus and runs the generated suite through
-the wrapper using MMIO reads/writes. The core GUI project retains `tb_aead`
-as its default top. Select `tb_aead_axi4l` for wrapper verification; generate
-`dv/vectors/suite` first. No AXI master VIP or board build is required.
+the wrapper using MMIO reads/writes. The core GUI project saves `tb_aead_axi4l`
+as its simulation top. Select `tb_aead` for native regression or
+`tb_aead_custom` for custom fixtures; generate the matching catalog first.
+The synthesis top remains `aead_cc20_p1305`. No AXI master VIP or board build
+is required.
 
 The package is `vivado/ip_repo/aead_axi4l_1_0`. It must contain the two AXI
 files and all eight core RTL modules in its synthesis/simulation file groups.

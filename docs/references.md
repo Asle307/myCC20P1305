@@ -20,5 +20,7 @@ its performance numbers. Standalone cipher, native AEAD and software-driven
 peripheral rates are different measurement boundaries. Published results do
 not establish this RTL's resource use or Fmax; those require fresh reports.
 
-Interface branches keep this collection unchanged and cite their additional
-lab and AMD/Xilinx interface manuals in their integration reference guide.
+The AXI4-Lite lab and AMD/Xilinx interface manuals are cited separately in
+[integration references](interfaces/integration_references.md). The
+`axi4l-axi4s-dma` development branch keeps the same cryptographic collection
+and maintains its own interface references.

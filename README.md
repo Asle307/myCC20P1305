@@ -1,13 +1,13 @@
 # ChaCha20-Poly1305 FPGA core and AXI4-Lite MMIO
 
-The repository contains the native RFC 8439 core and its `aead_axi4l` peripheral.
+The `main` branch contains the native RFC 8439 core and its `aead_axi4l` peripheral.
 The CPU transfers every AAD, payload and tag word through AXI4-Lite registers,
 using one held input slot and one held output slot. Software feeds input and
 drains output concurrently.
 
 | Boundary | Entry point |
 |---|---|
-| Native core, inherited from `main` | [Core specification](docs/architecture/core_specification.md) |
+| Native algorithm core | [Core specification](docs/architecture/core_specification.md) |
 | Peripheral behavior and requirements | [Peripheral architecture](docs/architecture/peripheral.md), [register contract](docs/interfaces/aead_axi4l.md) |
 | Interface sources and protocol citations | [Integration references](docs/interfaces/integration_references.md) |
 | Wrapper hierarchy and flowcharts | [Interface analysis](docs/architecture/interface_analysis.md), [figures](docs/figures/README.md) |
@@ -16,9 +16,10 @@ drains output concurrently.
 | Linux host and existing board observations | [Software guide](software/README.md) |
 | Verification | [Native DV](dv/README.md), [peripheral DV](dv/INTERFACE.md) |
 
-The native eight-module RTL, its specification and fixtures remain the shared
-algorithm baseline. AXI4-Lite adds a transport wrapper around that core.
-The alternative AXI4-Stream/DMA integration remains on `axi4l-axi4s-dma`.
+The eight native RTL modules, their specifications and fixtures are maintained
+alongside the AXI4-Lite wrapper on `main`. The separate `axi4l-axi4s-dma` branch
+is under development for AXI4-Lite control with AXI4-Stream/DMA data transfer;
+use that branch for its wrappers, package, board project and host.
 The peripheral target is 200 MHz. Native OOC synthesis still targets the native
 top on XC7V2000T-FLG1925-2, separately from the board design.
 
@@ -29,6 +30,10 @@ top on XC7V2000T-FLG1925-2, separately from the board design.
 3. Generate the RFC custom catalog: `.venv/bin/python script/gen_vectors.py generate --profile rfc`.
 4. Open `vivado/core/core.xpr` in Vivado 2025.2. Select `tb_aead_axi4l` for the peripheral suite, `tb_aead` for native regression or `tb_aead_custom` for custom fixtures, then **Set as Top**.
 5. Run **Behavioral Simulation** in the GUI; require the final bench PASS. The waveform hook selects the matching preset.
+
+The saved simulation top is `tb_aead_axi4l`; the synthesis top remains
+`aead_cc20_p1305`. Run both native and peripheral regression after changing
+shared RTL. See the DV guides for block-specific and custom-fixture checks.
 
 After running `tb_aead_custom`, check the captured RTL output independently:
 

@@ -16,7 +16,7 @@ over the updated HDL. Part, clock and board integration belong to the parent
 project. Simulation pass does not claim implementation timing.
 
 VLNV: `user.org:user:aead_axi4l:1.0`. This is the only custom peripheral package
-in this branch. All ten HDL files under `hdl/` belong to the package; the eight
+on `main`. All ten HDL files under `hdl/` belong to the package; the eight
 native algorithm modules must match `rtl/`. The two AXI4-Lite wrapper modules are maintained under `rtl/`; all ten
 `hdl/` copies must match their corresponding maintained RTL files. The
 peripheral simulation bench uses `rtl/` directly.

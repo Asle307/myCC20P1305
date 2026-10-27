@@ -1,4 +1,4 @@
-# axi4l interface RTL analysis
+# AXI4-Lite interface RTL analysis
 
 ## Scope and instance hierarchy
 
@@ -11,7 +11,7 @@ the native controller, stage boundaries and framing contract are unchanged.
 TOP (aead_axi4l)
   aead_axi4l_slave_lite_v1_0_S00_AXI_inst (aead_axi4l_slave_lite_v1_0_S00_AXI)
     u_aead (aead_cc20_p1305)
-      [all 12 descendants expanded in the inherited native analysis]
+      [all 12 descendants expanded in the native RTL analysis]
 ```
 
 The outer module supplies parameters and named bus wiring. The slave adapter
@@ -33,7 +33,7 @@ and writing the mode supplied by that CONTROL command.
 | Group | Initiator → responder | Signals and type |
 |---|---|---|
 | S00_AXI | CPU/interconnect → outer module → slave | AWADDR/AWPROT/AWVALID/AWREADY; WDATA/WSTRB/WVALID/WREADY; BRESP/BVALID/BREADY; ARADDR/ARPROT/ARVALID/ARREADY; RDATA/RRESP/RVALID/RREADY |
-| CORE | Slot adapter → native AEAD | All native configuration, input, output and completion ports; see inherited native port table |
+| CORE | Slot adapter → native AEAD | All native configuration, input, output and completion ports; see native port table |
 
 The transaction flowcharts describe register/slot ownership; their process
 boxes are explanatory phases, **not extra RTL state encodings**. B/R responses

@@ -30,11 +30,11 @@
  SVG files are exported from the corresponding draw.io page; edit the source
  and refresh its preview together. No diagram PDF is added to the bibliography.
 
-## axi4l interface extension
+## AXI4-Lite peripheral figures
 
-The native figures above are inherited without modification. The interface
-hierarchy expands the two added wrapper levels, then points to that complete
-native hierarchy. Detailed signals and qualifiers are in
+The interface hierarchy expands the two AXI4-Lite wrapper levels maintained
+on `main`, then points to the complete native hierarchy. Detailed signals and
+qualifiers are in
 [interface analysis](../architecture/interface_analysis.md).
 
 | Editable source | Page | Preview |

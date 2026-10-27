@@ -1,8 +1,9 @@
 # Integration references and protocol scope
 
-The native cryptographic reference collection remains the inherited eight PDFs
-in `docs/references/`. This guide adds only the sources needed for this branch's
-interface and Vivado workflow. Vendor manuals are linked, not redistributed.
+The cryptographic reference collection contains eight PDFs under
+`docs/references/`. This guide records the additional sources for the
+AXI4-Lite interface and Vivado workflow maintained on `main`. Vendor manuals
+are linked, not redistributed.
 
 ## VJU_SoC lab boundary
 
