@@ -1,9 +1,0 @@
-# Generated platform products. Keep vitis-comp.json and the standalone BSP
-# configuration/build metadata; Vitis can regenerate these trees from the XSA.
-/export/
-/resources/
-/hw/sdt/
-/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/include/
-/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/lib/
-/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/
-/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/hw_artifacts/

@@ -30,7 +30,7 @@ reports establish utilization or routed timing. RTL simulation does not prove
 implementation frequency. After closing Vivado, preview `make clean DRY_RUN=1`
 or `make distclean DRY_RUN=1` before removing generated products.
 
-On this integration branch, `tb_aead_axi4l` is the default peripheral top.
+The saved simulation top is `tb_aead_axi4l` for peripheral verification.
 Its two wrapper sources are simulation-only. Use **Set as Top** to select
 `tb_aead` or `tb_aead_custom` for native verification, then restore the peripheral
 top. See [peripheral DV](../../dv/INTERFACE.md) and

@@ -7,13 +7,14 @@ changing a block, read `README.md`, its specification under
 
 ## Configuration scope
 
-This branch owns the AXI4-Lite MMIO configuration. The peripheral top is
-`aead_axi4l`; AXI4-Lite carries both control and message words. Its bench is
+This repository contains the native core and the AXI4-Lite MMIO configuration.
+The peripheral top is `aead_axi4l`; AXI4-Lite carries both control and message words. Its bench is
 `dv/tb_aead_axi4l.v`, package is `vivado/ip_repo/aead_axi4l_1_0/`, board
 project is `vivado/kv260/kv260.xpr`, and host is `software/aead_uio.c`.
 Keep this tree self-contained for that transport. AXI4-Stream/DMA wrappers,
 packages, projects, hosts and guides belong to `axi4l-axi4s-dma`.
-Preserve the native modules, specifications and fixtures shared with `main`.
+Preserve the native modules, specifications and fixtures shared with the
+alternative integration branch.
 Maintained HDL lives under `rtl/`; packaged HDL copies must match it.
 
 ## Source and documentation contracts

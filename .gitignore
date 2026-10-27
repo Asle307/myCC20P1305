@@ -28,40 +28,6 @@ clockInfo.txt
 /vivado/**/*.srcs/utils_1/
 /vivado/**/*.xpr.backup*
 
-# Vitis binaries and compiler/build output at any project depth.
-*.elf
-*.o
-*.a
-*.d
-*.map
-*.su
-CMakeCache.txt
-cmake_install.cmake
-compile_commands.json
-CMakeFiles/
-build.ninja
-
-# Local Vitis builds and exported products. Keep component source, launch
-# configurations, platform settings and linker scripts.
-/vitis/**/build/
-/vitis/**/export/
-/vitis/**/resources/
-/vitis/**/hw/sdt/
-/vitis/**/bsp/include/
-/vitis/**/bsp/lib/
-/vitis/**/bsp/libsrc/
-/vitis/**/bsp/hw_artifacts/
-/vitis/**/bsp/CMakeFiles/
-/vitis/**/bsp/build.ninja
-/vitis/**/bsp/cmake_install.cmake
-/vitis/**/bsp/compile_commands.json
-/vitis/_ide/
-/vitis/.rigel_lopper/
-/vitis/**/_ide/logs/
-/vitis/**/.vitisWorkspace.json
-/vitis/**/src/README.txt
-/vitis/**/src/.clangd
-
 # Local host builds, exported deliverables and generated fixtures.
 /build/
 /artifacts/

@@ -1,6 +1,7 @@
-# ChaCha20-Poly1305 — AXI4-Lite MMIO
+# ChaCha20-Poly1305 FPGA core and AXI4-Lite MMIO
 
-This branch integrates the native RFC 8439 core as `aead_axi4l`. The CPU transfers every AAD, payload and tag word through AXI4-Lite registers,
+The repository contains the native RFC 8439 core and its `aead_axi4l` peripheral.
+The CPU transfers every AAD, payload and tag word through AXI4-Lite registers,
 using one held input slot and one held output slot. Software feeds input and
 drains output concurrently.
 
@@ -15,8 +16,9 @@ drains output concurrently.
 | Linux host and existing board observations | [Software guide](software/README.md) |
 | Verification | [Native DV](dv/README.md), [peripheral DV](dv/INTERFACE.md) |
 
-The native eight-module RTL, its specification and fixtures are inherited
-unchanged from `main`. This branch adds only its own transport implementation.
+The native eight-module RTL, its specification and fixtures remain the shared
+algorithm baseline. AXI4-Lite adds a transport wrapper around that core.
+The alternative AXI4-Stream/DMA integration remains on `axi4l-axi4s-dma`.
 The peripheral target is 200 MHz. Native OOC synthesis still targets the native
 top on XC7V2000T-FLG1925-2, separately from the board design.
 

@@ -1,4 +1,0 @@
-domain_path: /home/asle307/Repositories/myCC20P1305/vitis/aead_kv260/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp
-app_src_dir: /opt/Xilinx/2025.2/Vitis/data/embeddedsw/lib/sw_apps/empty_application
-template: empty_application
-lang: c
