@@ -39,3 +39,6 @@ __pycache__/
 *.tmp
 *~
 .DS_Store
+
+# Locally provisioned secure-link keys (never commit actual PSKs).
+*.psk

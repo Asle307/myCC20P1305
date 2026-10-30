@@ -49,8 +49,10 @@ checkout is needed.
 
 `vivado/kv260/kv260.xpr` connects the peripheral to PS HPM0 through SmartConnect
 and monitors its AXI4-Lite bus with System ILA. All logic uses the PL0 clock
-and synchronized active-low reset. `software/aead_uio.c` owns word scheduling,
-polling, timeout recovery and output/authentication checks.
+and synchronized active-low reset. `software/aead_uio_api.c` owns word scheduling, polling, timeout recovery and
+output/authentication checks. The diagnostic host `software/aead_uio.c` and
+secure Bluetooth application share it; the public API retains tentative
+plaintext privately until authenticated completion.
 
 The peripheral bench runs the complete fixture suite and stresses AW/W order,
 byte strobes, stalled responses, word slots and reset/error recovery. Native

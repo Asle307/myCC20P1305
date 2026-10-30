@@ -1,7 +1,8 @@
 # AXI4-Lite Linux UIO tests and throughput
 
-`aead_uio.c` is a standalone C99 host for the packaged 16-register AXI-Lite
-peripheral. It follows the VJU_SoC Linux UIO mapping boundary and uses the
+`aead_uio.c` is a C99 diagnostic host for the packaged 16-register AXI-Lite
+peripheral, linked with `aead_uio_api.c`. It follows the VJU_SoC Linux UIO
+mapping boundary and uses the
 [AEAD register map](../docs/interfaces/aead_axi4l.md). It does not need the
 Xilinx bare-metal BSP, DMA, Python packages or OpenSSL on the board.
 
@@ -17,14 +18,15 @@ client at a time, and do not reload the bitstream during a test.
 From the repository root on the development machine, replace `BOARD_IP`:
 
 ```sh
-scp software/aead_uio.c debian@BOARD_IP:~/Asle/
+scp software/aead_uio.c software/aead_uio_api.c software/aead_uio_api.h \
+    software/aead_uio_internal.h debian@BOARD_IP:~/Asle/
 ```
 
 Compile **on the board** in the SSH terminal:
 
 ```sh
 cd ~/Asle
-gcc -std=c99 -O2 -Wall -Wextra aead_uio.c -o aead_uio
+gcc -std=c99 -O2 -Wall -Wextra aead_uio.c aead_uio_api.c -o aead_uio
 sudo ./aead_uio --device /dev/uio12
 ```
 
@@ -50,14 +52,21 @@ little endian. INPUT_DATA and PUSH are separate writes, and output data/meta
 are read before POP. The polling loop drains output while feeding input so
 the two single-word slots cannot deadlock each other.
 
-Each operation has a 5000 ms polling timeout by default. A failing operation
+The API now requires FPGA Manager `fpga0` to report `operating` before
+opening UIO; an unknown or unreadable state is rejected. This is a necessary
+check, not proof of the correct bitstream, PL clock or a responsive AXI bus.
+When input/output make no progress, polling waits 1 ms before reading STATUS
+again.
+
+Each operation has a 5000 ms polling timeout by default. The timeout cannot
+interrupt a stalled individual MMIO read or write. A failing operation
 started by this process is aborted with SOFT_RESET. An already busy device
 or preexisting ERROR is reported without resetting someone else's session.
 Exit codes: 0 for pass, 1 for test/timeout failure, 2 for usage or mapping error.
 
 ## Measure throughput on the board
 
-Copy and recompile the updated `aead_uio.c` using the commands above. No RTL,
+Copy and recompile the updated host and API sources using the commands above. No RTL,
 IP package or bitstream change is required. The existing lab setup has passed
 the three RFC checks with Linux reporting PL0 at `199999998 Hz` (approximately
 200 MHz). Check the running clock before measuring; the Vivado constraint
@@ -127,7 +136,8 @@ still runs regardless of the selected benchmark mode.
 
 ### Compare with the native stream
 
-The [DV guide](../dv/README.md#native-core-cycle-measurement) describes the
+The following historical results were collected before the polling delay was
+added; they do not measure the updated host. The [DV guide](../dv/README.md#native-core-cycle-measurement) describes the
 `AEAD_UNSTALLED` simulation option. With the same public fixture as the UIO
 benchmark (key bytes 0..31, nonce bytes 0..11, 12 AAD bytes, 16384 payload
 bytes), behavioral simulation of the current RTL at a 5 ns clock produced:
@@ -181,7 +191,7 @@ JTAG/hw_server path; SSH and UIO alone cannot read the current System ILA.
 
 ```sh
 mkdir -p build/host
-cc -std=c99 -O2 -Wall -Wextra -Werror software/aead_uio.c -o build/host/aead_uio
+cc -std=c99 -O2 -Wall -Wextra -Werror software/aead_uio.c software/aead_uio_api.c -o build/host/aead_uio
 .venv/bin/python -m unittest discover -s software/tests -v
 ```
 
@@ -192,6 +202,29 @@ sections, a ChaCha20 block boundary, output framing and error/timeout recovery.
 Benchmark tests also cover fixture capture, mode selection, warm-up, replay,
 rate units and rejection of a faulty measured iteration, including a 16 KiB
 payload. The model intentionally stops input consumption when output is held, exposing
-clients that fail to interleave draining and feeding. Undefined-behavior checks
-are enabled for that model. This does not replace RTL simulation or a real
+clients that fail to interleave draining and feeding. AddressSanitizer and
+undefined-behavior checks are enabled for that model. This does not replace RTL simulation or a real
 board run; the FPGA board result must be reported separately.
+
+## Reusable API and Bluetooth application
+
+[`aead_uio_api.h`](aead_uio_api.h) exposes validated one-page UIO mapping and
+arbitrary AEAD operations, including model callbacks. The implementation owns
+word scheduling, framing checks, interleaved feeding/draining and timeout/reset
+recovery. Caller output stays unchanged until successful completion and, for
+decrypt, AUTH_OK=1. Authentication rejection returns -2; other errors return -1.
+Key registers are not promised to be zeroized. Advisory locking excludes other
+cooperating API/diagnostic clients, not arbitrary MMIO users. The diagnostic
+internals in `aead_uio_internal.h` retain public-fixture comparisons and the
+existing benchmark semantics; applications must use the safe public API.
+
+The [secure HC-05 CLI](secure_link/README.md) adds PSK session authentication,
+bidirectional chat, authenticated chunked files and tamper/replay demos.
+It requires OpenSSL; full laptop RFCOMM builds also require BlueZ development
+files. Install those dependencies before running the complete software test
+suite. The diagnostic host/API alone still build without OpenSSL or BlueZ;
+its existing focused tests can run with
+`.venv/bin/python -m unittest discover -s software/tests -p test_uio.py -v`.
+The [wire specification](../docs/interfaces/secure_link.md) describes the
+new application protocol. Its live board/radio acceptance status is recorded
+separately from the historical UIO measurements above.

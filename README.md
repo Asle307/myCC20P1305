@@ -14,6 +14,7 @@ drains output concurrently.
 | IP Catalog package | [Package guide](vivado/ip_repo/aead_axi4l_1_0/README.md) |
 | KV260 design | [Board guide](vivado/kv260/README.md), `vivado/kv260/kv260.xpr` |
 | Linux host and existing board observations | [Software guide](software/README.md) |
+| Secure HC-05 chat and file application | [CLI guide](software/secure_link/README.md), [session protocol](docs/interfaces/secure_link.md) |
 | Verification | [Native DV](dv/README.md), [peripheral DV](dv/INTERFACE.md) |
 
 The eight native RTL modules, their specifications and fixtures are maintained

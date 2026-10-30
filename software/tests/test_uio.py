@@ -66,9 +66,17 @@ class HostTests(unittest.TestCase):
                                             ",\n".join(entries) + "\n};\n")
             flags = ["cc", "-std=c99", "-O2", "-Wall", "-Wextra", "-Werror"]
             host, model = root / "aead_uio", root / "test_uio_model"
-            subprocess.run(flags + [str(ROOT / "software/aead_uio.c"), "-o", str(host)], check=True)
-            subprocess.run(flags + ["-fsanitize=undefined", "-I" + str(root),
-                                    str(ROOT / "software/tests/test_uio_model.c"), "-o", str(model)], check=True)
+            subprocess.run(flags + [str(ROOT / "software/aead_uio.c"), str(ROOT / "software/aead_uio_api.c"), "-o", str(host)], check=True)
+            subprocess.run(flags + ["-fsanitize=address,undefined", "-I" + str(root),
+                                    str(ROOT / "software/tests/test_uio_model.c"), str(ROOT / "software/aead_uio_api.c"), "-o", str(model)], check=True)
+            guard = root / "test_uio_guard"
+            subprocess.run(flags + ["-fsanitize=address,undefined",
+                                    str(ROOT / "software/tests/test_uio_guard.c"),
+                                    str(ROOT / "software/aead_uio_api.c"),
+                                    "-Wl,--wrap=fopen,--wrap=open", "-o", str(guard)], check=True)
+            checked = subprocess.run([str(guard)], capture_output=True, text=True)
+            self.assertEqual(checked.returncode, 0, checked.stdout + checked.stderr)
+            self.assertIn("PASS FPGA state guard", checked.stdout)
             result = subprocess.run([str(model)], capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             self.assertIn("PASS UIO host", result.stdout)
@@ -86,6 +94,8 @@ class HostTests(unittest.TestCase):
                 self.assertAlmostEqual(float(mibps) * 1048576 / 1e6, float(mbps), delta=0.002)
                 self.assertAlmostEqual(float(mbps), int(byte_count) / 2 * float(rate) / 1e6, delta=0.002)
             self.assertNotIn("runtime error", result.stderr)
+            self.assertNotRegex(result.stderr, r"AEAD API:.*data [0-9a-f]{8}")
+            self.assertIn("AEAD API: output metadata", result.stderr)
             self.assertIn("timeout", result.stderr)
             self.assertIn("Benchmark failed at encrypt iteration 1; no rate for this mode.", result.stderr)
             self.assertEqual(subprocess.run([str(host), "--help"], capture_output=True).returncode, 0)
